@@ -2,3 +2,19 @@
 .selected{
 	background-color: yellow;
 }
+
+/*class responsible for the position of the login form before login*/
+.position_logging_form{
+	position: fixed;
+	top: 50%;
+    left: 50%;
+    margin-top: -200px;
+  	margin-left: -150px;
+}
+
+/*class responsible for the position of the login form after login*/
+.position_logged_in{
+	position: absolute;
+	margin-left: 900px;
+	margin-top: -60px;
+}

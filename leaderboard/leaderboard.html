@@ -1,41 +1,42 @@
 <head>
 	<title>Leaderboard</title>
 </head>
-<body>
-	<h1>Leaderboard</h1>
-	<h1>{{> leaderboard }}</h1>
-</body>
-<template name="leaderboard">
-	<!-- 
-	// new approach
-	{{ player}}
-	{{ otherHelperFunction }}
-	-->
-	<ul>
-		{{#each player}}
-			<li class="player {{ selectedClass }}"> {{ name }} : {{ score }} </li>
-		{{ /each }}
-		<br>
-		{{#if showSelectedPlayer}}
-		<li> Selected player: {{ showSelectedPlayer.name }} </li>
+	<body>
+		{{#unless currentUser}}
+			<center><h1>Welcome to my first Meteor Leaderboard app</h1></center>
+			<h1 class="position_logging_form">{{> loginButtons}}</h1>
+		{{/unless}}
+		{{#if currentUser}}
+			<h1>Leaderboard</h1>
+			<div class="position_logged_in">{{> loginButtons}}</div>
 		{{/if}}
-	</ul>
-	{{#if showSelectedPlayer}}
-	<input type="button" class="increment" value="Give 5 Points">
-	{{/if}}
-	<input type="button" class="decrement" value="Take 5 Points">
-	<input type="button" class="remove" value="Remove player">
+		<h1>{{> leaderboard }}</h1>
+	</body>
 
-	<br><br><br>
-	{{> addPlayerForm}}
-	<h6> The number of players in the collection is: {{ countPlayers }} </h6>
-</template>
+	<template name="leaderboard">
+		{{#if currentUser}}
+			<ul>
+				{{#each player}}
+					<li class="player {{ selectedClass }}"> {{ name }} : {{ score }} </li>
+				{{ /each }}
+				<h5>The number of players in the collection is: {{ countPlayers }}</h5>
+				{{#if showSelectedPlayer}}
+					<li> Selected player: {{ showSelectedPlayer.name }} </li>
+				{{/if}}
+			</ul>
+				<input type="button" class="increment" value="Give 5 Points">
+				<input type="button" class="decrement" value="Take 5 Points">
+				<input type="button" class="remove" value="Remove player">
+			<br><br>
+			
+			{{> addPlayerForm}}
+		{{/if}}
+	</template>
 
-<template name="addPlayerForm">
-	<form>
-		<p>Player Name: <input type="text" name="playerName"></p>
-		<p>Score: <input type="text" name="scoreNumber"></p>
-		<input type="submit" value="Add Player">
-	</form>
-
-</template>
+	<template name="addPlayerForm">
+			<form>
+				Player Name: <input type="text" name="playerName">
+				Score: <input type="text" name="scoreNumber">
+				<input type="submit" class="btn" value="Add Player">
+			</form>
+	</template>
