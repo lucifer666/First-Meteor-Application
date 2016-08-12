@@ -1,14 +1,14 @@
-accounts-base          added, version 1.2.2   
-accounts-password      added, version 1.1.4
-ddp-rate-limiter       added, version 1.0.0
-email                  added, version 1.0.8
-localstorage           added, version 1.0.5
-npm-bcrypt             added, version 0.7.8_2
-rate-limit             added, version 1.0.0
-service-configuration  added, version 1.0.5
-sha                    added, version 1.0.4
-srp                    added, version 1.0.4
-
-accounts-ui           added, version 1.1.6    
-accounts-ui-unstyled  added, version 1.1.8
-less                  added, version 2.5.1
+accounts-password      1.2.14  Password support for accounts
+accounts-twitter       1.1.11  Login service for Twitter accounts
+accounts-ui            1.1.9  Simple templates to add login widgets to an app
+blaze-html-templates   1.0.4  Compile HTML templates into reactive UI with Meteor Blaze
+ecmascript             0.5.7  Compiler plugin that supports ES2015+ in all .js files
+es5-shim               4.6.13  Shims and polyfills to improve ECMAScript 5 support
+jquery                 1.11.9  Manipulate the DOM using CSS selectors
+meteor-base            1.0.4  Packages that every Meteor app needs
+mobile-experience      1.0.4  Packages for a great mobile user experience
+mongo                  1.1.10  Adaptor for using MongoDB and Minimongo over DDP
+session                1.1.6  Session variable
+standard-minifier-css  1.1.8  Standard css minifier used with Meteor apps by default.
+standard-minifier-js   1.1.8  Standard javascript minifiers used with Meteor apps by default.
+tracker                1.1.0  Dependency tracker to allow reactive callbacks
